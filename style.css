@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 15px;
+  padding: 5px;
+  position: relative;
+  background-color: rgb(250, 250, 250);
+  color: rgb(65, 65, 65);
+}
+
+#test {
+  color: red;
+}
+#header {
+  display: grid;
+  grid-template: 1fr / 1fr 3fr 1fr;
+  gap: 10px;
+}
+#header-left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+#header-center {
+  display: flex;
+  justify-content: center;
+}
+#header-right {
+  display: flex;
+  justify-content: right;
+}
+#main-welcome {
+  display: grid;
+  grid-template: 2fr 1fr / 2fr 1fr 1fr 1fr;
+}
+#logo {
+  grid-area: 1 / 1 / 3 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#logo img {
+  margin: 20px;
+  max-width: 200px;
+  max-height: 200px;
+  align-self: center;
+}
+.welcome-text {
+  grid-area: 1 / 2 / 2 / 5;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.select {
+  width: 100%;
+  height: 30%;
+  text-wrap: wrap;
+}
+#number {
+  grid-area: 2 / 2 / 3 / 3;
+  margin: 0px 20px;
+}
+#difficulty {
+  grid-area: 2 / 3 / 3 / 4;
+  margin-right: 20px;
+}
+#time {
+  grid-area: 2 / 4 / 3 / 5;
+  margin-right: 20px;
+}
+#main-index {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 3fr 1fr;
+}
+#timer {
+  grid-area: 1 / 1 / 2 / 2;
+}
+#motivation {
+  grid-area: 2 / 1 / 3 / 2;
+}
+#game {
+  grid-area: 1 / 2 / 3 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  margin: 2% 0px;
+  height: 21%;
+  justify-content: center;
+  align-items: center;
+}
+#game img {
+  width: 100%;
+}
+.image-div {
+  display: flex;
+  width: 15.66667%; /* 100/6 = 16.67-1%gap images per line related to flex game div*/
+  position: relative;
+  border: 2px solid black;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation-name: apply-overlay;
+  animation-duration: 5s; /*! edit main.js playTheGame overlay.animationDuration with this. */
+  animation-fill-mode: forwards;
+}
+@keyframes apply-overlay {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /*! 1 -> 0.5 (for testing only) */
+  }
+}
+#prevent-clicks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+#hint-div {
+  grid-area: 1 / 3 / 2 / 4;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+.number-of-mistakes {
+  border: 1px black solid;
+  text-align: center;
+}
+button {
+  padding: 5px;
+}
+#hint-button {
+  display: none; /* ! display: none skipped the idea for hint button /////////// */
+  justify-content: center;
+}
+#start {
+  grid-area: 2 / 3 / 3 / 4;
+}
+#footer {
+  display: flex;
+  justify-content: space-between;
+}

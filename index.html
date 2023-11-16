@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE MEMORY GAME</title>
+    <link rel="icon" href="#" />
+    <!-- to solve the error: GET http://127.0.0.1:5500/favicon.ico 404 (Not Found) -->
+    <link rel="stylesheet" href=".\style.css" />
+  </head>
+  <body id="body">
+    <header id="header">
+      <div id="header-left">
+        <h4>
+          MERAKI_Academy_Project_1 <br />
+          B06_Kamal Lahloh
+        </h4>
+      </div>
+      <div id="header-center"><h1>THE MEMORY GAME</h1></div>
+      <div id="header-right">
+        <button id="dark">Dark Theme</button>
+        <button id="light">Light Theme</button>
+      </div>
+    </header>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------ -->
+
+    <div id="body-welcome">
+      <main id="main-welcome">
+        <div id="logo">
+          <p id="win-lose"></p>
+          <img id="logo-photo" src="Media/meraki-logo.jpg" alt="logo" />
+          <p id="logo-text"></p>
+        </div>
+        <div class="welcome-text">
+          <h4>Welcome to The Memory Game</h4>
+          <br />
+          How to Play: <br />
+          The game starts with all the cards face-down. Start by turning over
+          two cards. If the two cards have the same picture, the cards stays
+          face-up, otherwise the cards turns face-down again. You will win if
+          all the cards faces-up. <br />
+          At first choose the number of cards to start the game with. The
+          difficulty since you need to finish the game with less mistakes than
+          what you chooses. And the time limit to finish the game within.
+        </div>
+        <div id="number" class="number choices">
+          <label for="number">number of cards:</label>
+          <select id="number-select" name="number" class="number select">
+            <option value="24">24 Cards</option>
+            <option value="22">22 Cards</option>
+            <option value="20">20 Cards</option>
+            <option value="18">18 Cards</option>
+            <option value="16">16 Cards</option>
+            <option value="14">14 Cards</option>
+            <option value="12">12 Cards</option>
+            <option value="10" selected>10 Cards</option>
+            <option value="8">8 Cards</option>
+            <option value="6">6 Cards</option>
+            <option value="4">4 Cards</option>
+          </select>
+        </div>
+        <div id="difficulty" class="difficulty choices">
+          <label for="difficulty">Difficulty:</label>
+          <select
+            id="difficulty-select"
+            name="difficulty"
+            class="difficulty select"
+          >
+            <option value="5" selected>5 mistakes</option>
+            <option value="20">20 mistakes</option>
+            <option value="Number.POSITIVE_INFINITY">unlimited mistakes</option>
+          </select>
+        </div>
+        <div id="time" class="time choices">
+          <label for="time">Time:</label>
+          <select id="time-select" name="time" class="time select">
+            <option value="120000" selected>2 Minutes</option>
+            <option value="600000">10 Minutes</option>
+            <option value="-100000">No time limit</option>
+          </select>
+        </div>
+      </main>
+    </div>
+
+    <!-- ------------------------------------------------------------ -->
+
+    <div id="body-game">
+      <main id="main-index">
+        <div id="timer">
+          <br>
+          Time limit = 
+          <p id="timer-value"></p>
+          <br>
+          Countdown = 
+          <p id="timer-countdown"></p>
+          <br>
+        </div>
+        <div>
+          <p id="motivation"></p>
+        </div>
+        <div id="game"></div>
+        <div id="hint-div">
+          <div class="number-of-mistakes">
+            No. of mistakes is
+            <p id="number-of-mistakes"></p>
+
+            <p id="wrong-attempts-counter"></p>
+          </div>
+          <br />
+          <button id="hint-button">HINT</button>
+        </div>
+        <div id="start"></div>
+      </main>
+    </div>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------ -->
+
+    <footer id="footer">
+      <div>
+        <audio id="music" loop autoplay muted controls>
+          <source src="Media/Canon in D - Pachelbel.mp3" type="audio/mpeg" />
+          <a href="Media/Canon in D - Pachelbel.mp3"> Download audio </a>
+        </audio>
+        <audio id="sound-correct">
+          <source src="Media/sound-correct.wav" type="audio/wav" />
+        </audio>
+        <audio id="sound-wrong">
+          <source src="Media/sound-wrong.wav" type="audio/wav" />
+        </audio>
+        <audio id="sound-win">
+          <source src="Media/sound-win.wav" type="audio/wav" />
+        </audio>
+        <audio id="sound-lose">
+          <source src="Media/sound-lose.wav" type="audio/wav" />
+        </audio>
+      </div>
+      <p id="reset-warning"></p>
+      <div>
+        <button id="reset-button" class="game-class">Reset</button>
+        <button id="play-now-button">Play Now</button>
+        <button id="play-again-button">Play Again</button>
+      </div>
+    </footer>
+    <script src=".\main.js"></script>
+  </body>
+</html>
